@@ -6,4 +6,4 @@ Short Spring Boot Shopping Cart Exercise
 3. Next please run "java -jar target/shopping-cart-exercise-0.0.1-SNAPSHOT.jar" to launch the Spring Boot Application
 4. Navigate to http://localhost:8080/ShoppingCart.html to test this application through a basic UI where you are able to upload a .json file.
 5. Alternatively you can test the endpoint by sending json to http://localhost:8080/calculateReceipt
-6. Coupons and Tax can be managed within the application.properties file with the following key {coupons.json.string}
+6. Coupons and Tax can be managed within the application.properties file with the following key {coupons.json.string} and {store.tax.rate}
