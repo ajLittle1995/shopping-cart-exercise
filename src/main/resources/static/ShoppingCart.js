@@ -1,12 +1,8 @@
-function doupload() {
-    let data = document.getElementById("file").files[0];
-    let entry = document.getElementById("file").files[0];
-    console.log('doupload',entry,data)
-
+function upload() {
+  let data = document.getElementById("file").files[0];
   const reader = new FileReader();
   reader.addEventListener('load', (event) => {
-    const text = event.target.result;
-    console.log(text);
+   const text = event.target.result;
    fetch('http://localhost:8080/calculateReceipt', {
        method: 'POST',
        headers: {
@@ -16,7 +12,12 @@ function doupload() {
        body: text
    })
       .then(response => response.json())
+      .then((data) => {
+
+       const template = document.createElement('div');
+       template.innerHTML = JSON.stringify(data).replace(/,/g, '<br>');
+       document.body.appendChild(template);
+      });
   });
   reader.readAsText(data);
-
 };
